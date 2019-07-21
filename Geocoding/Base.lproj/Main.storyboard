@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forward Geocoding-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="ForwardGeocodingViewController" customModule="Geocoding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gf-us-OMO" userLabel="countryTextField">
+                                <rect key="frame" x="20" y="70" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0b2-ma-pRZ" userLabel="streetTextField">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-57-gg4" userLabel="cityTextField">
+                                <rect key="frame" x="20" y="146" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX0-LM-YKX" userLabel="geocodeButton">
+                                <rect key="frame" x="20" y="184" width="374" height="30"/>
+                                <state key="normal" title="Fetch Coordinates"/>
+                                <connections>
+                                    <action selector="geocode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="acB-yY-txJ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZDL-IL-MTa" userLabel="activityIndicatorView">
+                                <rect key="frame" x="197" y="222" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DX-QP-sJT" userLabel="locationLabel">
+                                <rect key="frame" x="20" y="250" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5gf-us-OMO" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="23Z-Co-KxJ"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="VX0-LM-YKX" secondAttribute="trailing" constant="20" id="2P4-5v-0cs"/>
+                            <constraint firstItem="0b2-ma-pRZ" firstAttribute="top" secondItem="5gf-us-OMO" secondAttribute="bottom" constant="8" id="6uB-VA-3Bo"/>
+                            <constraint firstItem="VX0-LM-YKX" firstAttribute="top" secondItem="lGX-57-gg4" secondAttribute="bottom" constant="8" id="6zf-yA-gWo"/>
+                            <constraint firstItem="5gf-us-OMO" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="26" id="ABG-Dk-94C"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="0b2-ma-pRZ" secondAttribute="trailing" constant="20" id="AEX-zm-HBW"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="lGX-57-gg4" secondAttribute="trailing" constant="20" id="D3a-yF-Rq9"/>
+                            <constraint firstItem="0b2-ma-pRZ" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="GnF-8K-Yuh"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="9DX-QP-sJT" secondAttribute="trailing" constant="20" id="HeV-hy-d6u"/>
+                            <constraint firstItem="ZDL-IL-MTa" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Ji2-aD-oCQ"/>
+                            <constraint firstItem="9DX-QP-sJT" firstAttribute="top" secondItem="ZDL-IL-MTa" secondAttribute="bottom" constant="8" id="MT3-OA-NAP"/>
+                            <constraint firstItem="lGX-57-gg4" firstAttribute="top" secondItem="0b2-ma-pRZ" secondAttribute="bottom" constant="8" id="Mfm-WW-AvZ"/>
+                            <constraint firstItem="lGX-57-gg4" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="NEA-NL-Mbn"/>
+                            <constraint firstItem="9DX-QP-sJT" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="ay3-Sw-VmE"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="5gf-us-OMO" secondAttribute="trailing" constant="20" id="ff8-Pr-PKn"/>
+                            <constraint firstItem="ZDL-IL-MTa" firstAttribute="top" secondItem="VX0-LM-YKX" secondAttribute="bottom" constant="8" id="yDc-B8-Kgi"/>
+                            <constraint firstItem="VX0-LM-YKX" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="zEx-T3-Qsh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Forward Geocoding" image="first" id="acW-dT-cKf" userLabel="Forward Geocoding"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="ZDL-IL-MTa" id="Tho-PJ-zLL"/>
+                        <outlet property="cityTextField" destination="lGX-57-gg4" id="beH-Yy-D9j"/>
+                        <outlet property="countryTextField" destination="5gf-us-OMO" id="cMu-cF-gXX"/>
+                        <outlet property="geocodeButton" destination="VX0-LM-YKX" id="uzz-ix-CoQ"/>
+                        <outlet property="locationLabel" destination="9DX-QP-sJT" id="bYx-Wy-oqI"/>
+                        <outlet property="streetTextField" destination="0b2-ma-pRZ" id="Azp-IT-pug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
+        </scene>
+        <!--Reverse Geocoding-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ReverseGeocodingViewController" customModule="Geocoding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhL-rZ-4Rj" userLabel="longitudeTextField">
+                                <rect key="frame" x="20" y="90" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNK-w2-kc6" userLabel="geocodeButton">
+                                <rect key="frame" x="20" y="128" width="374" height="30"/>
+                                <state key="normal" title="Fetch Address"/>
+                                <connections>
+                                    <action selector="gecode:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Rn2-wO-L7S"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Eh2-Hw-ele" userLabel="activityIndicatorView">
+                                <rect key="frame" x="197" y="166" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-gB-Aoa" userLabel="locationLabel">
+                                <rect key="frame" x="20" y="194" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJC-Zr-Jze" userLabel="latitudeTextField">
+                                <rect key="frame" x="20" y="52" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qmW-gB-Aoa" firstAttribute="top" secondItem="Eh2-Hw-ele" secondAttribute="bottom" constant="8" id="3MI-H8-9XI"/>
+                            <constraint firstItem="Eh2-Hw-ele" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="7ve-5W-Amr"/>
+                            <constraint firstItem="bNK-w2-kc6" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="IF6-xy-jMp"/>
+                            <constraint firstItem="RhL-rZ-4Rj" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="MId-Rk-W9M"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="RhL-rZ-4Rj" secondAttribute="trailing" constant="20" id="Nhc-sC-vsk"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="bNK-w2-kc6" secondAttribute="trailing" constant="20" id="PjO-IT-sQ3"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="mJC-Zr-Jze" secondAttribute="trailing" constant="20" id="Tdi-0z-TTm"/>
+                            <constraint firstItem="RhL-rZ-4Rj" firstAttribute="top" secondItem="mJC-Zr-Jze" secondAttribute="bottom" constant="8" id="V7u-Bv-uXc"/>
+                            <constraint firstItem="Eh2-Hw-ele" firstAttribute="top" secondItem="bNK-w2-kc6" secondAttribute="bottom" constant="8" id="bCN-su-6T2"/>
+                            <constraint firstItem="mJC-Zr-Jze" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="fQt-We-zmq"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="qmW-gB-Aoa" secondAttribute="trailing" constant="20" id="otG-iV-6R2"/>
+                            <constraint firstItem="bNK-w2-kc6" firstAttribute="top" secondItem="RhL-rZ-4Rj" secondAttribute="bottom" constant="8" id="p3S-it-fYJ"/>
+                            <constraint firstItem="mJC-Zr-Jze" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="pV8-Fx-cNl"/>
+                            <constraint firstItem="qmW-gB-Aoa" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="pum-In-HkA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Reverse Geocoding" image="second" id="cPa-gy-q4n" userLabel="Reverse Geocoding"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Eh2-Hw-ele" id="V8K-3f-qgO"/>
+                        <outlet property="geocodeButton" destination="bNK-w2-kc6" id="eAP-gA-9SK"/>
+                        <outlet property="latitudeTextField" destination="mJC-Zr-Jze" id="88Q-2T-hbm"/>
+                        <outlet property="locationLabel" destination="qmW-gB-Aoa" id="yro-Fy-VM1"/>
+                        <outlet property="longitudeTextField" destination="RhL-rZ-4Rj" id="xl4-z0-F8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
